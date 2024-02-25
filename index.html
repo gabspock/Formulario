@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
+  <title>Crie seu evento</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+  <header>
+    <h1>Crie e compartilhe seu evento.</h1>
+    <p>O primeiro passo, é preencher esse
+      formulário de inscrição.</p>
+    </header>
+    <form id="my-form">
+      
+      <!--Essa TAG funciona para dizer que existe um agrupamento de campos-->
+      <fieldset>
+        <!--Por conta de um bug do google chrome, precisamos setar assimos os espaçamentos do fieldset e legend-->
+        <div class="fieldset-wrapper">
+
+        <!--Vem seguido de uma legenda para montar os dados do agrupamento-->
+        <legend>Informações do Evento</legend>
+
+        <!--Wrapper significa que estamos agrupando em caixa alguns elementos, fazendo por formato de classe-->
+        <div class="input-wrapper">
+        <label for="event-title">Título do evento <span>(mínimo 8 caracteres)</span></label>
+        <!--
+          Input do tipo INLINE (por isso está em linha)
+          É do tipo inline-block, faz com que o campo fique com propriedades INLINE, termos de tamanho, destrava propriedades que usariamos no block 
+          Ocupando o espaço do conteudo, não faz quebra de conteudo e ocupa seu espaço 100% do espaço
+          width não funciona quando inline está setada, já o INLINE-BLOCK vai pegar o tamanho e colocar, width é liberado
+          tudo que está configurado para inline block, vai funcionar
+        -->
+        <!--A propriedade required significa que o campo deverá ser preenchido-->
+        <!--A propriedade minlength significa que o usuario deverá colocar no minimo 8 caracteres-->
+        <input 
+        type="text" 
+        id="event-title"
+        required
+        minlength="8"></input>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="event-link">Link do evento <span>(comece com https://)</span></label>
+        <input type="url" id="event-link"></input>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="event-whatsapp">Whatsapp para contato <span>(somente números)</span></label>
+        <input type="number" id="event-whatsapp"></input>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="event-info">Informações extras</label>
+        <textarea id="event-info"></textarea>
+      </div>
+
+      <div class="input-wrapper">
+        <label for="event-category">Categoria</label>
+        <select name="event-category">
+          <option value="live">Ao vivo</option>
+          <option value="podcast">Podcast</option>
+          <option value="mentorship">Mentoria</option>
+        </select>
+        </div>  
+      </div>
+     </fieldset>
+
+     <fieldset>
+      <div class="fieldset-wrapper">
+        <legend>Privacidades</legend>
+
+        <div class="input-wrapper">
+          <label for="event-email">E-mail do administrador <span>(digite um e-mail válido)</span></label>
+          <input type="email" id="event-email" />
+      </div>
+
+        <div class="input-wrapper">
+          <label for="event-password">Senha de acesso para os participantes <span>(mínimo 8 caracteres)</span></label>
+          <input type="password"
+          id="event-password"
+          minlength="8" />
+      </div>
+
+      <div class="checkbox-wrapper">
+        <input type="checkbox" id="event-private" />
+        <label for="event-private">Evento privado</label>
+    </div>
+
+    </fieldset>
+
+    <fieldset>
+      <div class="fieldset-wrapper">
+        <legend>Dia e hora</legend>
+
+        <!--Sub Agrupamento-->
+        <div class="col-3">
+
+        <div class="input-wrapper">
+          <label for="event-date">Data</label>
+          <input type="date" id="event-date" />
+        </div>
+
+        <div class="input-wrapper">
+          <label for="event-begin">Das</label>
+          <input type="time" id="event-begin" />
+        </div>
+
+        <div class="input-wrapper">
+          <label for="event-end">Até</label>
+          <input type="time" id="event-end" />
+        </div>
+
+        </div>
+    </fieldset>
+
+    <footer>
+      <input
+      class="button"
+      type="submit"
+      form="my-form" 
+      value="Salvar evento" >
+    </footer>
+
+    </div>
+    </form>
+    </div>
+</body>
+</html>
