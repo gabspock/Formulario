@@ -277,6 +277,19 @@ footer .button:hover{
   background-color: #08a04c;
 }
 
+#made {
+    font-size: 14px;
+    color: #444444;
+    text-align: center;
+    margin-top: 5px;
+    padding-bottom: 5px;
+}
+
+#made a {
+    color: #8d8d8d;
+    text-decoration: none;
+}
+
 /*quando o usuario não preenche alguma informação*/
 input:invalid {
   border: 2px solid red;
